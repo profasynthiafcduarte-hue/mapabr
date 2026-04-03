@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Descobrimento do Brasil — WebGame Educacional</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -545,38 +545,92 @@
   .rodape {
     background: var(--ink);
     border-top: 3px solid var(--gold);
-    padding: 28px 20px 20px;
+    padding: 22px 24px 18px;
     text-align: center;
-    width: 100%;
+    grid-column: 1 / -1;
   }
   .rodape .nome {
     font-family: 'Cinzel', serif;
-    font-size: 1.15rem;
+    font-size: 0.75rem;
     color: var(--parch);
-    margin-bottom: 8px;
-    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+    letter-spacing: 0.06em;
   }
   .rodape .nome span {
     color: var(--gold-light);
     font-weight: 700;
   }
+  .rodape .rodape-sub {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+    font-style: italic;
+  }
   .rodape .contatos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .rodape .contatos a {
+    color: var(--parch-dark);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .rodape .contatos a:hover { color: var(--gold-light); }
+  .rodape .contatos i { font-size: 0.95rem; }
+
+  /* ── RODAPÉ TELA DE INÍCIO ── */
+  .inicio-rodape {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 14px 20px;
+    border-top: 1px solid rgba(184,134,11,0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  .inicio-rodape .nome {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    color: var(--parch-deep);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .inicio-rodape .nome span {
+    color: var(--gold);
+  }
+  .inicio-rodape .rodape-sub {
+    font-size: 0.72rem;
+    color: rgba(148,163,184,0.7);
+    letter-spacing: 0.08em;
+    font-style: italic;
+    margin: 0;
+  }
+  .inicio-rodape .contatos {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 16px;
   }
-  .rodape .contatos a {
-    color: var(--parch-dark);
+  .inicio-rodape .contatos a {
+    color: rgba(201,170,114,0.55);
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
     transition: color 0.2s;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
   }
-  .rodape .contatos a:hover { color: var(--gold-light); }
-  .rodape .contatos i { font-size: 1rem; }
+  .inicio-rodape .contatos a:hover { color: var(--gold-light); }
+  .inicio-rodape .contatos i { font-size: 0.68rem; }
 </style>
 </head>
 <body>
@@ -598,6 +652,18 @@
     Jogando em dupla · 10 pontos históricos · Responda para avançar<br>
     A dupla só pode SEGUIR ao ponto seguinte após responder ao atual.
   </div>
+  <footer class="inicio-rodape">
+    <div class="nome">Profª <span>Synthia Duarte</span> © 2026</div>
+    <p class="rodape-sub">Docente Especialista em Informática &amp; Robótica Educativa</p>
+    <div class="contatos">
+      <a href="mailto:profsynthia.fc.duarte@gmail.com">
+        <i class="fas fa-envelope"></i> profsynthia.fc.duarte@gmail.com
+      </a>
+      <a href="https://www.tiktok.com/@robtica.livre?_r=1&_t=ZS-941yz8WfahL" target="_blank">
+        <i class="fab fa-tiktok"></i> TikTok @robtica.livre
+      </a>
+    </div>
+  </footer>
 </div>
 
 <!-- ══ JOGO PRINCIPAL ══ -->
@@ -937,6 +1003,19 @@
       </div>
     </aside>
   </div>
+
+  <footer class="rodape">
+    <div class="nome">Profª <span>Synthia Duarte</span> © 2026</div>
+    <p class="rodape-sub">Docente Especialista em Informática &amp; Robótica Educativa</p>
+    <div class="contatos">
+      <a href="mailto:profsynthia.fc.duarte@gmail.com">
+        <i class="fas fa-envelope"></i> profsynthia.fc.duarte@gmail.com
+      </a>
+      <a href="https://www.tiktok.com/@robtica.livre?_r=1&_t=ZS-941yz8WfahL" target="_blank">
+        <i class="fab fa-tiktok"></i> TikTok @robtica.livre
+      </a>
+    </div>
+  </footer>
 </div>
 
 <!-- ══ MODAL PERGUNTA ══ -->
@@ -1725,22 +1804,5 @@ responder = function(idx, pontoIdx) {
   _responder(idx, pontoIdx);
 };
 </script>
-
-<footer class="rodape">
-    <div class="nome">
-        Profª <span>Synthia Duarte</span> © 2026
-    </div>
-    <p style="color: #94a3b8; font-size: 1.1rem; letter-spacing: 1px; margin-bottom: 20px; text-align: center;">
-        Docente Especialista em Informática &amp; Robótica Educativa
-    </p>
-    <div class="contatos">
-        <a href="mailto:profsynthia.fc.duarte@gmail.com">
-            <i class="fas fa-envelope"></i> profsynthia.fc.duarte@gmail.com
-        </a>
-        <a href="https://www.tiktok.com/@robtica.livre?_r=1&_t=ZS-941yz8WfahL" target="_blank">
-            <i class="fab fa-tiktok"></i> TikTok @robtica.livre
-        </a>
-    </div>
-</footer>
 </body>
 </html>
