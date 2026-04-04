@@ -58,8 +58,8 @@ Cada erro ensina.
 
 ## 🛠️ Tecnologias utilizadas
 
-- HTML5  
-- CSS3  
+- HTML  
+- CSS 
 - JavaScript  
 
 ---
